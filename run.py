@@ -14,14 +14,13 @@ def incoming_sms():
 
     # Determine the right reply for this message
     geolocator = Nominatim(user_agent="foodClues")
-    location = geolocator.geocode("175 5th Avenue NYC")
+    location = geolocator.geocode(body)
     strLat = str(location.latitude)
     strLon = str(location.longitude)
     latLongStr = (strLat, strLon)
     concat = ', '.join(latLongStr)
-    if body == 'hello':
-        resp.message(concat)
-    elif body == 'bye':
+    resp.message(concat)
+    if body == 'bye':
         resp.message("Goodbye")
 
     return str(resp)
