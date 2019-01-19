@@ -4,7 +4,7 @@ from geopy.geocoders import Nominatim
 from flask import (
     Flask, Blueprint, flash, g, redirect, render_template, request, session, url_for
 )
-
+from db import get_db
 
 def create_app(test_config=None):
     # create and configure the app
@@ -34,6 +34,10 @@ def create_app(test_config=None):
     
     @app.route('/sms', methods=('GET', 'POST'))
     def send_sms():
+        db = get_db()
+        user = db.execute(
+            'SELECT * FROM Food WHERE Store = ?', ('dog',)
+        ).fetchone()
         body = request.values.get('Body', None)
         
         # Start our TwiML response
@@ -47,6 +51,10 @@ def create_app(test_config=None):
         latLongStr = (strLat, strLon)
         concat = ', '.join(latLongStr)
         resp.message(concat)
+        resp.message(user['Store'])
+        
+        db = get_db
+        
         if body == 'bye':
             resp.message("Goodbye")
 
