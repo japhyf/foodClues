@@ -1,6 +1,6 @@
 from flask import Flask, request, redirect
 from twilio.twiml.messaging_response import MessagingResponse
-
+from geopy.geocoders import Nominatim
 app = Flask(__name__)
 
 @app.route("/sms", methods=['GET', 'POST'])
@@ -13,8 +13,10 @@ def incoming_sms():
     resp = MessagingResponse()
 
     # Determine the right reply for this message
+    geolocator = Nominatim(user_agent="foodClues")
+    location = geolocator.geocode("175 5th Avenue NYC")
     if body == 'hello':
-        resp.message("Hi!")
+        resp.message((location.latitude, location.longitude))
     elif body == 'bye':
         resp.message("Goodbye")
 
