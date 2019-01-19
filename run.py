@@ -16,10 +16,7 @@ def incoming_sms():
     geolocator = Nominatim(user_agent="foodClues")
     location = geolocator.geocode("175 5th Avenue NYC")
     latLong = (location.latitude, location.longitude)
-    if body == 'hello':
-        resp.message(latLong)
-    elif body == 'bye':
-        resp.message("Goodbye")
+    resp.message(latLong)
 
     return str(resp)
 
