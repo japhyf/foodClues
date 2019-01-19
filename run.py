@@ -18,8 +18,9 @@ def incoming_sms():
     strLat = str(location.latitude)
     strLon = str(location.longitude)
     latLongStr = (strLat, strLon)
+    concat = ', '.join(latLongStr)
     if body == 'hello':
-        resp.message(latLongStr)
+        resp.message(concat)
     elif body == 'bye':
         resp.message("Goodbye")
 
