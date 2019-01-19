@@ -4,7 +4,7 @@ from geopy.geocoders import Nominatim
 from flask import (
     Flask, Blueprint, flash, g, redirect, render_template, request, session, url_for
 )
-from db import get_db
+from app.db import get_db
 
 def create_app(test_config=None):
     # create and configure the app
