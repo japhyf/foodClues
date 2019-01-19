@@ -1,0 +1,54 @@
+
+@import url('https://fonts.googleapis.com/css?family=Sacramento');
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+@import url('http://fonts.googleapis.com/css?family=Cookie');
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
+
+:root{
+    --primary-color: #caebf2;
+    --secondary-color: #ff3b3f;
+    --carbon: #A9A9A9;
+    --neutral: #efefef;
+}
+
+*, *:after, *:before {
+    -webkit-box-sizing: border-box !important;
+    -moz-box-sizing: border-box !important;
+    box-sizing: border-box !important;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+}
+
+.blue{
+	background-color: blue;
+}
+
+ul.nav-bar{
+	border-radius: 5px;
+    width: 98vw;
+    margin-left: 1vw;
+    margin-top: 1vh;
+	z-index: 1;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: red;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #10;
+}
