@@ -55,7 +55,6 @@ def create_app(test_config=None):
         
         
     from . import db
-    from . import sms
-    app.register_blueprint(sms.bp)
+
     db.init_app(app)
     return app
