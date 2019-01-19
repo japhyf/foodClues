@@ -1,2 +1,2 @@
-# freeLivin
-livin free in California
+# foodClues
+Finding local EBT-accepting establishments
