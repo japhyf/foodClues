@@ -44,13 +44,13 @@ def create_app(test_config=None):
         resp = MessagingResponse()
 
         # Determine the right reply for this message
-        geolocator = Nominatim(user_agent="foodClues")
-        location = geolocator.geocode(body)
-        strLat = str(location.latitude)
-        strLon = str(location.longitude)
-        latLongStr = (strLat, strLon)
-        concat = ', '.join(latLongStr)
-        resp.message(concat)
+        #geolocator = Nominatim(user_agent="foodClues")
+        #location = geolocator.geocode(body)
+        #strLat = str(location.latitude)
+        #strLon = str(location.longitude)
+        #latLongStr = (strLat, strLon)
+        #concat = ', '.join(latLongStr)
+        #resp.message(concat)
         resp.message(user['Store'])
         
         db = get_db
