@@ -1,16 +1,5 @@
-# Create table
-CREATE TABLE Food(
-	Store VARCHAR(30),
-	Long DECIMAL(8,5),
-	Lat DECIMAL(8,5),
-	Address VARCHAR(30),
-	City VARCHAR(30),
-	State CHAR(2),
-	Zip INTEGER,
-	Zip4 INTEGER,
-	County VARCHAR(30)
-);
-# Populate table
+
+
 COPY Services.Food FROM stdin USING DELIMITERS ',';
 Rose Market,-121.86597,37.347843,1250 E Santa Clara St,,San Jose,CA,95116,2336,SANTA CLARA 
 TODDS MARKET,-117.25216,34.074272,1605 E Victoria Ave,,San Bernardino,CA,92408,3041,SAN BERNARDINO 

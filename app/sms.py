@@ -1,4 +1,3 @@
-
 from twilio.twiml.messaging_response import MessagingResponse
 from geopy.geocoders import Nominatim
 import functools
@@ -7,17 +6,19 @@ from flask import (
     Flask, Blueprint, flash, g, redirect, render_template, request, session, url_for
 )
 
-from app.db import get_db
+from db import get_db
 app = Flask(__name__)
 
-@app.route("/sms", methods=['GET', 'POST'])
+bp = Blueprint('sms', __name__, url_prefix='/sms')
+
+@app.route("/send", methods=['GET', 'POST'])
 def incoming_sms():
-    db = get_db()
-    db.execute(
-        'INSERT INTO Food (Store, Long) VALUES (?, ?)',
-        ("hello", 233.2323)
-    )
-    db.commit()
+    #db = get_db()
+    #db.execute(
+    #    'INSERT INTO Food (Store, Long) VALUES (?, ?)',
+    #    ("hello", 233.2323)
+    #)
+    #db.commit()
     # Get the message the user sent our Twilio number
     body = request.values.get('Body', None)
     
