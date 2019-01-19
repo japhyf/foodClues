@@ -32,7 +32,7 @@ def create_app(test_config=None):
     def hello():
         return 'Hello, World!'
     
-    @app.route('/sms')
+    @app.route('/sms', methods=('GET', 'POST'))
     def send_sms():
         body = request.values.get('Body', None)
         
