@@ -71,7 +71,7 @@ def create_app(test_config=None):
         # Start our TwiML response
         resp = MessagingResponse()
         #resp.message(concat)
-        resp.message("Thank you for using foodClues! The closest establishment to your location is "+dist+" miles away. "+closestRow['Store']+" which is located at "+closestRow['Address']);
+        resp.message("Thank you for using foodClues! The closest establishment to your location is "+str(dist)+" miles away. "+closestRow['Store']+" which is located at "+closestRow['Address']);
 
         if body == 'bye':
             resp.message("I fucked ur mom")
