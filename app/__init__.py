@@ -46,15 +46,14 @@ def create_app(test_config=None):
         strLat = str(location.latitude)
         strLon = str(location.longitude)
 
-        MINdist = 10000
+        MINdist = float(10000)
         for i in data:
             Store = i['Store']
             Lat = i['Lat']
             Lon = i['Lon']
-            dist = math.sqrt(math.pow(strLat - Lat,2)+math.pow(strLon - Lon,2))
+            dist = math.sqrt(math.pow(strLat - Lat,float(2))+math.pow(strLon - Lon,float(2)))
             if(dist < MINdist):
                 MINdist = dist
-                MINpoint = i
         s
         # Start our TwiML response
         resp = MessagingResponse()
