@@ -51,6 +51,7 @@ def create_app(test_config=None):
         start = (strLat, strLon)
         minDist = 100000000000000000000000000000
         closestRow = data[0]
+        j = 0
         for i in data:
             Lat = i['Lat']
             Lon = i['Lon']
@@ -59,6 +60,9 @@ def create_app(test_config=None):
             if(dist < minDist):
                 minDist = dist
                 closestRow = i
+                j++
+                if j < 15:
+                    resp.message("new dist is " + str(dist))
 
         #MINdist = float(10000)
         #for i in data:
