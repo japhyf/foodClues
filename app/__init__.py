@@ -37,7 +37,7 @@ def create_app(test_config=None):
     def send_sms():
         db = get_db()
         data = db.execute(
-            'SELECT Store, Lat, Lon FROM Food'
+            'SELECT * FROM Food'
         ).fetchall()
 
         body = request.values.get('Body', None)
