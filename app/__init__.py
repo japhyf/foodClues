@@ -54,11 +54,12 @@ def create_app(test_config=None):
             dist = math.sqrt(math.pow(float(strLat) - float(Lat),float(2))+math.pow(float(strLon) - float(Lon),float(2)))
             if(dist < MINdist):
                 MINdist = dist
+                MIN = i
         
         # Start our TwiML response
         resp = MessagingResponse()
         #resp.message(concat)
-        resp.message("Thank you for using foodClues! The closest establishment to your location is "+i['Store']+" which is located at "+i['Address']);
+        resp.message("Thank you for using foodClues! The closest establishment to your location is "+MIN['Store']+" which is located at "+MIN['Address']);
 
         if body == 'bye':
             resp.message("I fucked ur mom")
