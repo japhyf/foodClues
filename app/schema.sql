@@ -23,7 +23,7 @@ INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('Gra
 INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('Golden Liquor', -118.09061, 34.146233, '2895 E Colorado Blvd', 'Pasadena', 'CA', 91107, 4311, 'LOS');
 INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('Trader Joes 174', -122.2481, 37.496777, '1482 El Camino Real', 'San Carlos', 'CA', 94070, 5102, 'SAN');
 INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('Helens Liquor', -118.19251, 33.908669, '12512 Atlantic Ave', 'Lynwood', 'CA', 90262, 5320, 'LOS');
-INSERT INTO Food (STEStore,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('Northgate 18', -117.92011, 33.737179, '770 S Harbor Blvd', 'Santa Ana', 'CA', 92704, 2320, 'ORANGE');
+INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('Northgate 18', -117.92011, 33.737179, '770 S Harbor Blvd', 'Santa Ana', 'CA', 92704, 2320, 'ORANGE');
 INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('PARKER AVE MARKET', -121.42986, 37.74733, '1656 Parker Ave', 'Tracy', 'CA', 95376, 3048, 'SAN');
 INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('Foods Co 387', -121.32097, 36.417622, '2443 H Dela Rosa SR St', 'Soledad', 'CA', 93960, 3392, 'MONTEREY');
 INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('COST LESS FOOD COMPANY 8', -120.76776, 38.343063, '555 S State Highway 49', 'Jackson', 'CA', 95642, 2535, 'AMADOR');
@@ -188,7 +188,7 @@ INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('RIT
 INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('RITE AID 5842', -118.96606, 37.645935, '26 OLD MAMMOTH RD', 'MAMMOTH LAKES', 'CA', 93546, NULL, 'MONO');
 INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('RITE AID 5844', -118.04494, 34.571705, '37950 47th St E', 'Palmdale', 'CA', 93552, 3271, 'LOS');
 INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('RITE AID 5845', -117.66998, 35.622761, '101 N China Lake Blvd', 'Ridgecrest', 'CA', 93555, 3915, 'KERN');
-INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('Saigon Market', -118.3528, 33.888329, '15705 Hawthorne Blvd', 'Lawndale', CA, 90260, '3913,LOS');
+INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('Saigon Market', -118.3528, 33.888329, '15705 Hawthorne Blvd', 'Lawndale', 'CA', 90260, 3913,'LOS');
 INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('RITE AID 6383', -118.25696, 34.047466, '600 W 7th St', 'Los Angeles', 'CA', 90017, 3842, 'LOS');
 INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('RITE AID 5678', -116.18169, 33.677711, '51101 Harrison St', 'Coachella', 'CA', 92236, 1560, 'RIVERSIDE');
 INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('RITE AID 5681', -116.39263, 33.721333, '72875 Highway 111', 'Palm Desert', 'CA', 92260, 3312, 'RIVERSIDE');
@@ -433,7 +433,7 @@ INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('Wal
 INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('SHOP & GO 3', -120.52808, 37.321079, '2272 Beachwood Dr', 'Merced', 'CA', 95348, 3721, 'MERCED');
 INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('Ralphs 84', -118.6175, 34.457237, '29675 The Old Rd', 'Castaic', 'CA', 91384, 4570, 'LOS');
 INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('Stater Bros. Markets 174', -117.24871, 33.597549, '36010 Hidden Springs Rd', 'Wildomar', 'CA', 92595, 7622, 'RIVERSIDE');
-INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('SUPERMERCADO MI TIERRA', -118.612, -122.172, '37.746212', '9509 International Blvd', 'Oakland', 'CA', 94603, 1445,'ALAMEDA');
+INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('SUPERMERCADO MI TIERRA', -118.612, 37.746212, '9509 International Blvd', 'Oakland', 'CA', 94603, 1445,'ALAMEDA');
 INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('RITE AID 6219', -118.13538, 33.760399, '5128 E 2nd St', 'Long Beach', 'CA', 90803, 5322, 'LOS');
 INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('RITE AID 6235', -118.3532, 33.825657, '3860 Sepulveda Blvd', 'Torrance', 'CA', 90505, 2408, 'LOS');
 INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('RITE AID 6346', -118.16798, 33.766964, '211 Cherry Ave', 'Long Beach', 'CA', 90802, 3930, 'LOS');
@@ -495,7 +495,7 @@ INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('RIT
 INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('RITE AID 6065', -121.525, 38.581146, '1260 W Capitol Ave', 'West Sacramento', 'CA', 95691, 2719, 'YOLO');
 INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('RITE AID 6069', -121.49558, 38.579685, '831 K St', 'Sacramento', 'CA', 95814, 3509, 'SACRAMENTO');
 INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('RITE AID 6071', -121.46604, 38.570847, '1125 Alhambra Blvd', 'Sacramento', 'CA', 95816, 5286, 'SACRAMENTO');
-INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('RITE AID 6072', -121.46915, 38.572617, '2801 K St', 'Sacramento', CA, 95816, '5118,SACRAMENTO');
+INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('RITE AID 6072', -121.46915, 38.572617, '2801 K St', 'Sacramento', 'CA', 95816, 5118,'SACRAMENTO');
 INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('RITE AID 6073', -121.43707, 38.557995, '5712 Folsom Blvd', 'Sacramento', 'CA', 95819, 4608, 'SACRAMENTO');
 INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('RITE AID 6074', -121.44222, 38.524067, '5610 Stockton Blvd', 'Sacramento', 'CA', 95824, 1612, 'SACRAMENTO');
 INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('RITE AID 6075', -121.41415, 38.610794, '2214 El Camino Ave', 'Sacramento', 'CA', 95821, 4602, 'SACRAMENTO');
