@@ -12,4 +12,5 @@ CREATE TABLE Food(
 	County VARCHAR(30)
 );
 
-INSERT INTO Food(Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('Rose Market',-121.86597,37.347843,'1250 E Santa Clara St','San Jose', 'CA', 95116,2336,'Santa Clara');
+INSERT INTO Food(Store, Lon, Lat, Address, City, State, Zip, Zip4, County) 
+VALUES ('Rose Market',-121.86597,37.347843,'1250 E Santa Clara St','San Jose', 'CA', 95116,2336,'Santa Clara');
