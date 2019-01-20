@@ -51,7 +51,7 @@ def create_app(test_config=None):
             Store = i['Store']
             Lat = i['Lat']
             Lon = i['Lon']
-            dist = math.sqrt(math.pow(strLat - Lat,float(2))+math.pow(strLon - Lon,float(2)))
+            dist = math.sqrt(math.pow(float(strLat) - float(Lat),float(2))+math.pow(float(strLon) - float(Lon),float(2)))
             if(dist < MINdist):
                 MINdist = dist
         s
