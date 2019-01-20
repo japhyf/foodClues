@@ -54,7 +54,6 @@ def create_app(test_config=None):
         resp.message("youre lat lon is " + str(strLat)+", "+str(strLon))
         minDist = 100000000000000000000000000000
         closestRow = data[0]
-        j = 0
         for i in data:
             Lat = i['Lat']
             Lon = i['Lon']
@@ -63,9 +62,6 @@ def create_app(test_config=None):
             if(dist < minDist):
                 minDist = dist
                 closestRow = i
-                j += 1
-                if j < 15:
-                    resp.message("new dist is " + str(minDist)+closestRow['Store']+" which is located at "+closestRow['Address'])
 
         #MINdist = float(10000)
         #for i in data:
