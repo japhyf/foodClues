@@ -46,8 +46,8 @@ def create_app(test_config=None):
         strLat = location.latitude
         strLon = location.longitude
         data = db.execute(
-            'SELECT * FROM Food WHERE Lat BETWEEN ? AND ? AND Lon BETWEEN ? AND ?', (strLat - 1, strLat + 1, strLon - 1, strLon + 1)
-        ).fetchall(
+            'SELECT * FROM Food'
+        ).fetchall()
         start = (strLat, strLon)
         minDist = 100000000000000000000000000000
         closestRow = data[0]
