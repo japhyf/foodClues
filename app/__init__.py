@@ -51,7 +51,6 @@ def create_app(test_config=None):
             'SELECT * FROM Food'
         ).fetchall()
         start = (strLat, strLon)
-        resp.message("youre lat lon is " + str(strLat)+", "+str(strLon))
         minDist = 100000000000000000000000000000
         closestRow = data[0]
         for i in data:
