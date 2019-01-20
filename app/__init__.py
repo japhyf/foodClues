@@ -46,7 +46,7 @@ def create_app(test_config=None):
         strLon = str(location.longitude)
 
         MINdist = 10000
-        for i in result:
+        for i in data:
             Store = i[Store]
             Lat = i[Lat]
             Lon = i[Lon]
