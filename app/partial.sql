@@ -39,12 +39,12 @@ INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('Mus
 INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('ZIPPYS FOOD MART', -122.41188, 40.576687, '1750 Pleasant St', 'Redding', 'CA', 96001, 2327, 'SHASTA');
 INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('Nu Way Market', -118.24126, 33.984543, '6101 Holmes Ave', 'Los Angeles', 'CA', 90001, 1819, 'LOS');
 INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('California Chevron', -119.04792, 35.367496, '4100 California Ave', 'Bakersfield', 'CA', 93309, 1014, 'KERN');
-INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('Seven Liquor', -117.44794, 34.099255, '16339 Arrow Blvd', 'Unit A', 'Fontana', 'CA', 92335, '7744,SAN');
+INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('Seven Liquor', -117.44794, 34.099255, '16339 Arrow Blvd', 'Unit A', 'Fontana', 'CA', 92335, 7744,'SAN');
 INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('Priyas Market and Liquors', -122.10954, 37.676212, '20008 Meekland Ave', 'Hayward', 'CA', 94541, 2025, 'ALAMEDA');
 INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('CONTRERAS MEAT MARKET', -123.17196, 39.133114, '1691 Talmage Rd', 'Ukiah', 'CA', 95482, 6029, 'MENDOCINO');
 INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('SF SUPERMARKET', -121.44859, 38.474186, '4562 MACK RD', 'SACRAMENTO', 'CA', 95823, NULL, 'SACRAMENTO');
 INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('SIDHUS ARCO', -121.97037, 38.353218, '199 Elmira Rd', 'Vacaville', 'CA', 95687, 4700, 'SOLANO');
-INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('Selma Farmers Market',  LLC, -119.59176, '36.546864', '10951 E Mountain View Ave', 'Selma', CA, 93662, 9744, 'FRESNO');
+INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('Selma Farmers Market LLC', -119.59176, 36.546864, '10951 E Mountain View Ave', 'Selma', 'CA', 93662, 9744, 'FRESNO');
 INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('MARYLAND MARKET', -122.4141, 37.782848, '300 Turk St', 'San Francisco', 'CA', 94102, 3704, 'SAN');
 INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('La Chiquita Meat Market', -121.26511, 38.12336, '845 S Central Ave', 'Lodi', 'CA', 95240, 4832, 'SAN');
 INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('Trader Joes 193', -122.02512, 36.97464, '700 Front St', 'Santa Cruz', 'CA', 95060, 4525, 'SANTA');
@@ -66,4 +66,4 @@ INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('RIT
 INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('RITE AID 5508', -118.12525, 33.888866, '15924 Bellflower Blvd', 'Bellflower', 'CA', 90706, 4602, 'LOS');
 INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('RITE AID 5510', -118.117, 33.857174, '5520 Woodruff Ave', 'Lakewood', 'CA', 90713, 1535, 'LOS');
 INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('RITE AID 5512', -118.15252, 33.889343, '8447 Alondra Blvd', 'Paramount', 'CA', 90723, 4405, 'LOS');
-INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('EL PECAS MEAT MARKET', -118.30722, 33.831463, '1644 W Carson St', 'Ste F', 'Torrance', CA, 90501, '2839,LOS');
+INSERT INTO Food (Store,Lon,Lat,Address,City,State,Zip,Zip4,County) VALUES ('EL PECAS MEAT MARKET', -118.30722, 33.831463, '1644 W Carson St', 'Ste F', 'Torrance', 'CA', 90501, 2839,'LOS');
