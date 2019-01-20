@@ -74,7 +74,7 @@ def create_app(test_config=None):
         
 
         #resp.message(concat)
-        resp.message("Thank you for using foodClues! The closest establishment to your location is "+str(minDist)+" miles away. "+closestRow['Store']+" which is located at "+closestRow['Address']);
+        resp.message("Thank you for using foodClues! The closest establishment to your location is "+str(round(minDist, 1))+" miles away. "+closestRow['Store']+" which is located at "+closestRow['Address']);
 
         if body == 'bye':
             resp.message("I fucked ur mom")
