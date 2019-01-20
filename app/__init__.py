@@ -44,8 +44,8 @@ def create_app(test_config=None):
         body = request.values.get('Body', None)
         geolocator = Nominatim(user_agent="foodClues")
         location = geolocator.geocode(body)
-        strLat = str(location.latitude)
-        strLon = str(location.longitude)
+        strLat = location.latitude
+        strLon = location.longitude
         start = (strLat, strLon)
         minDist = 100000000000000000000000000000
         closestRow = data[0]
