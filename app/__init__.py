@@ -54,7 +54,7 @@ def create_app(test_config=None):
             dist = math.sqrt(math.pow(float(strLat) - float(Lat),float(2))+math.pow(float(strLon) - float(Lon),float(2)))
             if(dist < MINdist):
                 MINdist = dist
-        s
+        
         # Start our TwiML response
         resp = MessagingResponse()
         #resp.message(concat)
