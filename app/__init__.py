@@ -1,4 +1,5 @@
 import os
+import math
 from twilio.twiml.messaging_response import MessagingResponse
 from geopy.geocoders import Nominatim
 from flask import (
@@ -47,14 +48,14 @@ def create_app(test_config=None):
 
         MINdist = 10000
         for i in data:
-            Store = i[Store]
-            Lat = i[Lat]
-            Lon = i[Lon]
-            dist = sqrt(math.pow(strLat - Lat,2)+math.pow(strLon - Lon,2))
+            Store = i['Store']
+            Lat = i['Lat']
+            Lon = i['Lon']
+            dist = math.sqrt(math.pow(strLat - Lat,2)+math.pow(strLon - Lon,2))
             if(dist < MINdist):
                 MINdist = dist
                 MINpoint = i
-        
+        s
         # Start our TwiML response
         resp = MessagingResponse()
         #resp.message(concat)
