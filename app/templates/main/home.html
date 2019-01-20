@@ -23,44 +23,66 @@
 </head>
 <body>
 <h1 id="title" class="header center accent-2">Free Living</h1>
-<!-- Icon Section
-	<div id="icon-container">
-        <div class="container">
-            <div class="row">
-                <div class="col s3">
-                    <div class="icon-block wow fadeInUp">
-                        <h2 class="center context-icons"><i class="material-icons secondary-item-color">face</i></h2>
-                        <h5 class="center icon-header">Create a profile</h5>
-                        <p class="context light icon-text">Fill your profile with your favorite books, authors and genres. Choose up to 10 books you want to share.</p>
-                    </div>
-                </div>
-                <div class="col s3">
-                    <div class="icon-block wow fadeInUp">
-                        <h2 class="center context-icons"><i class="material-icons secondary-item-color">contact_mail</i></h2>
-                        <h5 class="center icon-header">Get matched</h5>
-                        <p class="context light icon-text">We will match you with another book lover who shares your interests.</p>
-                    </div>
-                </div>
-                <div class="col s3">
-                    <div class="icon-block wow fadeInUp">
-                    <h2 class="center context-icons"><i class="material-icons secondary-item-color">chat</i></h2>
-                    <h5 class="center icon-header">Get to know your match</h5>
-                    <p class="context light icon-text">Start talking to your new match through our built-in chat system.</p>
-                </div>
-                </div>
-                <div class="col s3">
-                    <div class="icon-block wow fadeInUp">
-                        <h2 class="center context-icons"><i class="material-icons secondary-item-color">autorenew</i></h2>
-                        <h5 class="center icon-header">Exchange books</h5>
-                        <p class="context light icon-text">Both you and your match will choose from your lists of sharable books and send eachother the book of your choosing.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-     -->
+<div class="row">
+<div class="col s1">
+<h6 class="bold">email</h6>
+</div>
+<div class="col s1">
+<h6 class="bold">username</h6>
+</div>
+<div class="col s1">
+<h6 class="bold">first</h6>
+</div>
+<div class="col s1">
+<h6 class="bold">last</h6>
+</div>
+<div class="col s1">
+<h6 class="bold">address1</h6>
+</div>
+<div class="col s1">
+<h6 class="bold">address2</h6>
+</div>
+<div class="col s1">
+<h6 class="bold">genres</h6>
+</div>
+<div class="col s1">
+<h6 class="bold">desc</h6>
+</div>
+</div>
+{% for item in data %}
+<div class="row">
+<div class="col s1">
+<p>{{item.Store}}</p>
+</div>
+<div class="col s1">
+<p>{{item.Lon}}</p>
+</div>
+<div class="col s1">
+<p>{{item.Lat}}</p>
+</div>
+<div class="col s1">
+<p>{{item.Address}}</p>
+</div>
+<div class="col s1">
+<p>{{item.City}}</p>
+</div>
+<div class="col s1">
+<p>{{item.State}}</p>
+</div>
+<div class="col s1">
+<p>{{item.Zip}}</p>
+</div>
+<div class="col s1">
+<p>{{item.Zip4}}</p>
+</div>
+
+</div>
+{% endfor %}
 </body>
 
 </html>
+<script type="text/javascript">
+
+</script>
 
 <!--{% endblock %}-->

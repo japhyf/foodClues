@@ -12,4 +12,9 @@ bp = Blueprint('main', __name__, url_prefix='/main')
 
 @bp.route('/home')
 def home():
-    return render_template('main/home.html')
+    db = get_db()
+    data = db.execute(
+        'SELECT * FROM Food'
+    ).fetchall()
+    return render_template('main/home.html',data=data)
+
