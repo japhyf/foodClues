@@ -1,132 +1,149 @@
 <!--{% block content %}-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
+    <!-- Compiled and minified CSS -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/animate.css') }}">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+    <script type="text/javascript" src= "{{ url_for('static',filename='js/typed.js') }}"></script>
+    <script type="text/javascript" src= "{{ url_for('static',filename='js/wow.min.js') }}"></script>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-  <!-- Compiled and minified CSS -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
-  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/animate.css') }}">
-  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
-  <script type="text/javascript" src= "{{ url_for('static',filename='js/typed.js') }}"></script>
-  <script type="text/javascript" src= "{{ url_for('static',filename='js/wow.min.js') }}"></script>
-  
-  
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Free Living</title>
+  </head>
 
-  <style>
-    #map {
-      height: 100%;
-    }
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-  </style>
-<title>Free Living</title>
-</head>
+  <body>
+    <!--
+    <h1 id="title" class="header center accent-2">Food Clues</h1>
+    -->
 
-<body>
+    <div class="navbar-fixed">
+        <nav>
+          <div class="nav-wrapper">
+            <a href="#!" class="center brand-logo">Food Clues</a>
+          </div>
+        </nav>
+      </div>
 
-<h1 id="title" class="header center accent-2">Food Clues</h1>
+    <div id="map"></div>
 
-<div id="map"></div>
+    <!-- Data to by populated by Python -->
+    {% for item in data %}
+    <div class="row">
+    <div class="col s1">
+    <p class="item">{{item.Store}}</p>
+    </div>
+    <div class="col s1">
+    <p class="item">{{item.Lon}}</p>
+    </div>
+    <div class="col s1">
+    <p class="item">{{item.Lat}}</p>
+    </div>
+    <div class="col s1">
+    <p class="item">{{item.Address}}</p>
+    </div>
+    <div class="col s1">
+    <p class="item">{{item.City}}</p>
+    </div>
+    <div class="col s1">
+    <p class="item">{{item.State}}</p>
+    </div>
+    <div class="col s1">
+    <p class="item">{{item.Zip}}</p>
+    </div>
+    <div class="col s1">
+    <p class="item">{{item.Zip4}}</p>
+    </div>
 
-<script>
+    </div>
+    {% endfor %}
+  </body>
+
+</html>
+
+<!-- Main Script -->
+<script type="text/javascript">
+
+  // Iterate through locations
+  var markerList = [];
+  var marker = {};
+  var j = 0;
+  $('.item').each(function(i, obj) {
+
+      if (i%8 == 1) {
+        marker['lng'] = Number(obj.innerHTML);
+      }
+      if (i%8 == 2) {
+        marker['lat'] = Number(obj.innerHTML);
+      }
+
+      if (i%8 == 0 && i != 0) {
+        markerList.push(marker);
+        marker = {};
+      }
+
+  });
+
+  // Output List for testing purposes
+  console.log(markerList);
+
+  // Initialize map
   function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: 36.996, lng: -122.059},
       zoom: 13
     });
+
+    // Alphabetical labels
+    var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+    // Initalize markers
+    var markers = markerList.map(function(markerList, i) {
+      return new google.maps.Marker({
+        position: markerList,
+        label: labels[i % labels.length]
+      });
+    });
+
+    // Add a marker clusterer to manage the markers.
+    var markerCluster = new MarkerClusterer(map, markers,
+    {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
   }
+
+  // AJAX script
+  $.ajax({
+    url: 'https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/directions/json?origin=Disneyland&destination=Universal+Studios+Hollywood&key=AIzaSyCT9HUlAx7zc6OTcVZ0qtoz0pELTU7O2lc',
+  	
+    //sending search info
+  	type: 'GET',
+  	dataType:'json',
+  	
+    success: function(response) {  
+  			console.log('success');
+  	},
+  	error: function(error) {
+      console.log(error);
+    }
+  });
+</script>
+
+<!-- MarkerClusterer API -->
+</script>
+<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
 </script>
 
 <!-- API key -->
 <script async defer 
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCT9HUlAx7zc6OTcVZ0qtoz0pELTU7O2lc&callback=initMap">
-</script>
-
-<!-- Data to by populated by Python -->
-{% for item in data %}
-<div class="row">
-<div class="col s1">
-<p class="item">{{item.Store}}</p>
-</div>
-<div class="col s1">
-<p class="item">{{item.Lon}}</p>
-</div>
-<div class="col s1">
-<p class="item">{{item.Lat}}</p>
-</div>
-<div class="col s1">
-<p class="item">{{item.Address}}</p>
-</div>
-<div class="col s1">
-<p class="item">{{item.City}}</p>
-</div>
-<div class="col s1">
-<p class="item">{{item.State}}</p>
-</div>
-<div class="col s1">
-<p class="item">{{item.Zip}}</p>
-</div>
-<div class="col s1">
-<p class="item">{{item.Zip4}}</p>
-</div>
-
-</div>
-{% endfor %}
-</body>
-
-</html>
-
-<!-- Script for iterating through locations -->
-<script type="text/javascript">
-var markerList = [];
-var marker = {};
-var j = 0;
-$('.item').each(function(i, obj) {
-
-    
-    if (i%8 == 1) {
-      marker['lon'] = obj.innerHTML;
-    }
-    if (i%8 == 2) {
-      marker['lat'] = obj.innerHTML;
-    }
-
-    if (i%8 == 0) {
-      markerList.push(marker);
-      marker = {};
-    }
-
-
-    
-});
-//markerList.push(marker);
-console.log(markerList);
-
-
-$.ajax({
-		url: 'https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/directions/json?origin=Disneyland&destination=Universal+Studios+Hollywood&key=AIzaSyCT9HUlAx7zc6OTcVZ0qtoz0pELTU7O2lc',
-		//sending search info
-		type: 'GET',
-		dataType:'json',
-		success: function(response) {
-			
-			console.log('success');
-		},
-		error: function(error) {
-			console.log(error);
-        }
-    });
-
 </script>
 
 <!--{% endblock %}-->
