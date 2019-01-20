@@ -41,6 +41,8 @@ def create_app(test_config=None):
     def send_sms():
         db = get_db()
         body = request.values.get('Body', None)
+        # Start our TwiML response
+        resp = MessagingResponse()
         geolocator = Nominatim(user_agent="foodClues")
         location = geolocator.geocode(body)
         strLat = location.latitude
@@ -74,8 +76,7 @@ def create_app(test_config=None):
         #        MINdist = dist
         #        MIN = i
         
-        # Start our TwiML response
-        resp = MessagingResponse()
+
         #resp.message(concat)
         resp.message("Thank you for using foodClues! The closest establishment to your location is "+str(dist)+" miles away. "+closestRow['Store']+" which is located at "+closestRow['Address']);
 
