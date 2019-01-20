@@ -35,33 +35,28 @@ def create_app(test_config=None):
     @app.route('/sms', methods=('GET', 'POST'))
     def send_sms():
         db = get_db()
-        data = db.execute(
-            'SELECT Store, Lat, Lon FROM Food'
-        ).fetchall()
-
+        user = db.execute(
+            'SELECT * FROM Food WHERE Store = ?', ('Rose Market',)
+        ).fetchone()
         body = request.values.get('Body', None)
-        geolocator = Nominatim(user_agent="foodClues")
-        location = geolocator.geocode(body)
-        strLat = str(location.latitude)
-        strLon = str(location.longitude)
-
-        MINdist = 10000
-        for i in result:
-            Store = i[Store]
-            Lat = i[Lat]
-            Lon = i[Lon]
-            dist = sqrt(math.pow(strLat - Lat,2)+math.pow(strLon - Lon,2))
-            if(dist < MINdist):
-                MINdist = dist
-                MINpoint = i
         
         # Start our TwiML response
         resp = MessagingResponse()
-        #resp.message(concat)
-        resp.message("Thank you for using foodClues! The closest establishment to your location is "+i[Store]+" which is located at "+i[address]);
 
+        # Determine the right reply for this message
+        #geolocator = Nominatim(user_agent="foodClues")
+        #location = geolocator.geocode(body)
+        #strLat = str(location.latitude)
+        #strLon = str(location.longitude)
+        #latLongStr = (strLat, strLon)
+        #concat = ', '.join(latLongStr)
+        #resp.message(concat)
+        resp.message(user['Store'])
+        
+        db = get_db
+        
         if body == 'bye':
-            resp.message("I fucked ur mom")
+            resp.message("Goodbye")
 
         return str(resp)
         
