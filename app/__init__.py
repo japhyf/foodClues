@@ -60,7 +60,7 @@ def create_app(test_config=None):
             if(dist < minDist):
                 minDist = dist
                 closestRow = i
-                j++
+                j += 1
                 if j < 15:
                     resp.message("new dist is " + str(dist))
 
