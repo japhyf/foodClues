@@ -62,19 +62,7 @@ def create_app(test_config=None):
                 minDist = dist
                 closestRow = i
 
-        #MINdist = float(10000)
-        #for i in data:
-        #    Store = i['Store']
-        #    Lat = i['Lat']
-        #    Lon = i['Lon']
-        #    dist = math.sqrt(math.pow(float(strLat) - float(Lat),float(2))+math.pow(float(strLon) - float(Lon),float(2)))
-        #    if(dist < MINdist):
-        #        MINdist = dist
-        #        MIN = i
-        
-
-        #resp.message(concat)
-        resp.message("Thank you for using foodClues! The closest establishment to your location is "+str(round(minDist, 1))+" miles away. "+closestRow['Store']+" which is located at "+closestRow['Address']);
+        resp.message("Thank you for using Food Clues! The closest establishment to your location is "+str(round(minDist, 1))+" miles away. "+closestRow['Store']+" which is located at "+closestRow['Address']);
 
         if body == 'bye':
             resp.message("I fucked ur mom")
